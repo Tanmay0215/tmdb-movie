@@ -86,9 +86,9 @@ function App() {
         <section className="trending">
           <h2>Trending Movies</h2>
           <ul className="grid grid-cols-5">
-            {trendingMovies.map((movie, index ) => (
-              <li key={movie.id}>
-                <p>{index+1}</p>
+            {trendingMovies.map((movie, index) => (
+              <li key={index}>
+                <p>{index + 1}</p>
                 <img src={movie.poster_url} alt="" />
               </li>
             ))}
@@ -102,7 +102,7 @@ function App() {
           ) : errorMessage ? (
             <p className="text-red-500">{errorMessage}</p>
           ) : (
-            <ul className="grid grid-cols-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {movieList.map((movie) => (
                 <MovieCard key={movie.id} movie={movie} />
               ))}
